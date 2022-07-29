@@ -39,10 +39,15 @@ export default function Navbar() {
               </ul>
             </li>
 
-
             <li className="nav-item">
               <Link href="/jsonplaceholder" passHref>
                 <a className="nav-link" >jsonplaceholder</a>
+              </Link> 
+            </li>
+
+            <li className="nav-item">
+              <Link href="/jsonapi" passHref>
+                <a className="nav-link" >jsonApi</a>
               </Link> 
             </li>
 
