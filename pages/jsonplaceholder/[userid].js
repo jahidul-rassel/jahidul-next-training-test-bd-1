@@ -30,7 +30,7 @@ export default function user( props ) {
             Street: { props.data.address.street }<br />
             City: { props.data.address.city }<br />
           </p>
-          <Link href="/users-jsonplaceholder">
+          <Link href="/jsonplaceholder">
               <a className={Post.btn}>See USERS Listing</a>
           </Link> 
         </div>
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 
 // This gets called at build time [ PART OF SSG ] 
 export async function getStaticProps( { params } ) {
-  console.log("[jsonplaceholder/[userid]] -> getStaticProps");
+  console.log(`[jsonplaceholder/[userid]] -> getStaticProps [${params.userid}]`);
 
   try {
     // params contains the post `id`.

@@ -31,7 +31,7 @@ export default function Details( props ) {
           Street: { props.data.address.street }<br />
           City: { props.data.address.city }<br />
         </p>
-        <Link href="/users-jsonplaceholder">
+        <Link href="/jsonplaceholder">
             <a className={Post.btn}>See USERS Listing</a>
         </Link>
       </div>
@@ -41,10 +41,10 @@ export default function Details( props ) {
 
 
 export async function getServerSideProps( context ) {
-  //console.log(context.query);
-
   try {
     var userId = context.query.userid[0];
+
+    console.log("[jsonplaceholder/[...userid]] -> getServerSideProps ["+userId+"]");
 
     // Fetch data from external API
     //console.log(`https://jsonplaceholder.typicode.com/users/`+userId);
