@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Head from 'next/head';
+import Head from 'next/head'
 
 import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.jsx"
 
