@@ -19,6 +19,14 @@ export default function nextDrupalArticle( { data } ) {
     
     return (
         <div>
+            <Head>
+                <title>{ data && <div dangerouslySetInnerHTML={{ __html: data.data.attributes.title }} /> }</title>
+            </Head>
+
+            <div className="mt-4" > 
+                <h3>{ data && <div dangerouslySetInnerHTML={{ __html: data.data.attributes.title }} /> }</h3>
+            </div>
+
             { imgSrc != "" && <div className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10" > 
             
                 <Image priority
@@ -32,10 +40,6 @@ export default function nextDrupalArticle( { data } ) {
                 
                 { console.log("Image URL, "+ DRUPAL_URL + imgSrc) }
             </div> } 
-
-            <div className="mt-4" > 
-                <h3>{ data && <div dangerouslySetInnerHTML={{ __html: data.data.attributes.title }} /> }</h3>
-            </div>
 
             <div className="mt-4" > 
                 { data && <div dangerouslySetInnerHTML={{ __html: data.data.attributes.body.value }} /> }
@@ -54,7 +58,7 @@ export async function getStaticPaths() {
         params: { articleId: data.id }
     }));
     
-    return { paths, fallback: false }
+    return { paths, fallback: true }
 }
 
 // This gets called at build time [ PART OF SSG ] 
