@@ -46,7 +46,7 @@ If you export a function called getStaticProps (Static Site Generation) from a p
 Next.js will pre-render this page at build time using the props returned by getStaticProps.
 */
 export async function getStaticProps() {
-  console.log("getStaticProps");
+  console.log("[jsonplaceholder/index] -> getStaticProps");
 
   const req = await fetch(`https://jsonplaceholder.typicode.com/users`);
   const data = await req.json();

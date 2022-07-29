@@ -41,6 +41,8 @@ export default function user( props ) {
 
 // This function gets called at build time [ PART OF SSG ]
 export async function getStaticPaths() {
+  console.log("[jsonplaceholder/[userid]] -> getStaticPaths");
+
   // Call an external API endpoint to get posts
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
   const users = await res.json();
@@ -55,6 +57,8 @@ export async function getStaticPaths() {
 
 // This gets called at build time [ PART OF SSG ] 
 export async function getStaticProps( { params } ) {
+  console.log("[jsonplaceholder/[userid]] -> getStaticProps");
+
   try {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
