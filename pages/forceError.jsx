@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function forceError() {
   return (
-    <div>forceError</div>
+    <div>forceError { ERROR }</div>
   )
 }
