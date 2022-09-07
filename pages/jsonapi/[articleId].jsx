@@ -21,7 +21,7 @@ export default function nextDrupalArticle( { data } ) {
     return (
         <div>
             <Head>
-                <title>{ data && <div dangerouslySetInnerHTML={{ __html: data.data.attributes.title }} /> }</title>
+                <title>[SSG {fallback: false}] { data && <div dangerouslySetInnerHTML={{ __html: data.data.attributes.title }} /> }</title>
             </Head>
 
             <div className="mt-4" > 
